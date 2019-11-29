@@ -1,0 +1,70 @@
+<h1>{{title}}</h1>
+<h2>I m Heading 2</h2>
+
+<!-- <button (click)="changeVal(true)">Show Div</button>
+<button (click)="changeVal(false)">Hide Div</button> -->
+
+<!-- <button (click)="isValid=true">Show Div</button>
+<button (click)="isValid=false">Hide Div</button>
+
+<div *ngIf="isValid">
+    I m Valid Div
+</div> -->
+
+<!-- <div *ngIf="projectsList.length==0">
+    No Projects Exist...
+</div>
+<div *ngIf="projectsList.length>0">
+    Projects List...
+</div> -->
+
+<!--
+<div *ngIf="projectsList.length==0;else myelsBlock">
+    No Projects Exist...
+</div>
+<ng-template #myelsBlock>
+    Project Exist..
+</ng-template>-->
+
+<!-- <div *ngIf="projectsList.length==0;then myIfBlock;else myelsBlock"></div>
+<ng-template #myIfBlock>
+    Project Doesnt Exist..
+</ng-template>
+<ng-template #myelsBlock>
+    Project List..
+    <table border="1">
+        <tr>
+            <th>Serial No.</th>
+            <th>Project Id</th>
+            <th>Project Name</th>
+            <th>Even Row</th>
+            <th>Odd Row</th>
+        </tr>
+        <tr *ngFor="let p of projectsList;index as i;let ev=even;let od=odd">
+            <td>{{i+1}}</td>
+            <td>{{p.projectId}}</td>
+            <td>{{p.projectName}}</td> 
+            <td>{{ev}}</td>
+            <td>{{od}}</td>
+        </tr>
+    </table>
+    <button (click)="addNewRow('p00','Test Project')">Add New Row</button>
+    <button (click)="removeRow('P101')">Remove  Row</button>
+</ng-template> -->
+
+<h2>Using ngSwitch</h2>
+<select (change)="setValue($event)">
+    <option value="none">------Select----------</option>
+    <option value="one">Option One</option>
+    <option value="two">Option Two</option>
+    <option value="three">Option Three</option>
+    <option value="another">Option Another</option>
+</select>
+
+<!-- My Choosen Val : {{myChoosenVal}} -->
+<div [ngSwitch]="myChoosenVal">
+    <h3 *ngSwitchCase="'one'">First</h3>
+    <h3 *ngSwitchCase="'two'">Second</h3>
+    <h3 *ngSwitchCase="'three'">Third</h3>
+    <h3 *ngSwitchDefault>Default</h3>
+</div>
