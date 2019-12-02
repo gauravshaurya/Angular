@@ -1,0 +1,26 @@
+<ul>
+    <li *ngFor="let c of citylist">
+        {{c.city}}
+        <ul>
+            <li *ngFor="let s of c.student">
+            {{s.studentId}}, {{s.studentName}}
+            </li>
+        </ul>
+    </li>
+</ul>
+<br>
+<br>
+<div>
+  User Name:
+  <input type="text" [(ngModel)]="userName">
+  <button [disabled]="userName==''" (click)="userName=''">Reset</button>
+</div>
+<p>{{userName}}</p>
+
+<button (click)="toggle()">Display Details</button>
+<br>
+<p *ngIf="display">I am Angular</p>
+<br>
+<p *ngFor="let p of counterArray;index as i" [ngStyle]="{'background-color':i>=5?'blue':'red'}" > {{p}} <br></p>
+
+
