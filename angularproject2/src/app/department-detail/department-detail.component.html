@@ -1,0 +1,24 @@
+<br><br>
+<div class="container" align="center">
+    <table class="table" border="1">
+            <thead class="thead-dark" align="center">
+              <tr>
+                <th colspan="2">Department Details</th>
+              </tr>
+              <tr>
+                <td>Department ID</td>
+                <td>{{departmentId}}</td>
+              </tr>
+              <tr>
+                <td>Department Name</td>
+                <td>{{departmentName}}</td>
+             </tr>
+            </thead>
+            <tbody align="center"> 
+              <tr (click)="onSelect(d)" *ngFor="let d of departments">
+                <td>{{d.id}}</td>
+                <td>{{d.name}}</td>
+              </tr>
+            </tbody>
+    </table>
+</div>

@@ -1,0 +1,23 @@
+<br>
+<div class="container" align="center">
+    <h1 align="center">Employees List</h1>
+        <br>
+        <table class="table" border="1">
+            <thead class="thead-dark" align="center">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Salary</th>
+                    <th>Employee Gender</th>
+                    <th>Employee DOB</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr *ngFor="let e of employeeArray">
+                    <td>{{e.employeeName}}</td>
+                    <td>{{e.employeeSalary}}</td>
+                    <td>{{e.gender}}</td>
+                    <td>{{e.employeeDOB | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
