@@ -1,1 +1,10 @@
-<p>hero-detail works!</p>
+<table *ngIf="heroObj!=undefined" class="table table-hover">
+    <tr>
+        <td>Hero Id</td>
+        <td>{{heroObj.heroId}}</td>
+    </tr>
+    <tr>
+            <td>Hero Name</td>
+            <td><input type="text" [(ngModel)]="heroObj.heroName"></td>
+        </tr>
+</table>

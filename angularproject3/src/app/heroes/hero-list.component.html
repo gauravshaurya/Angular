@@ -1,1 +1,21 @@
-<p>hero-list works!</p>
+<br>
+<div class="container" align="center">
+    <h1 align="center">Heroes List</h1>
+        <br>
+        <table class="table" border="1">
+            <thead class="thead-dark" align="center">
+                <tr>
+                    <th>Hero ID</th>
+                    <th>Hero Name</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr *ngFor="let h of herolist" (click)="onSelect(h)">
+                    <td >{{h.heroId}}</td>
+                    <td>{{h.heroName}}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+
+<app-hero-detail [heroObj]="selectedHeroObj"></app-hero-detail>

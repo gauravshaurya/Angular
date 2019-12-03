@@ -7,9 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroListComponent implements OnInit {
 
+  herolist:any=[
+    {
+      'heroId':101,
+      'heroName':'Green Arrow'
+    },
+    {
+      'heroId':102,
+      'heroName':'The Flash'
+    },
+    {
+      'heroId':103,
+      'heroName':'Supergirl'
+    },
+    {
+      'heroId':104,
+      'heroName':'Bat Woman'
+    },
+    {
+      'heroId':105,
+      'heroName':'White Canary'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectedHeroObj:any;
+  onSelect(selectedObj:any){
+    console.log(selectedObj.heroId+" "+selectedObj.heroName);
+    this.selectedHeroObj=selectedObj;
   }
 
 }
