@@ -37,7 +37,7 @@ export class HeroListComponent implements OnInit {
 
   selectedHeroObj:any;
   onSelect(selectedObj:any){
-    console.log(selectedObj.heroId+" "+selectedObj.heroName);
+    
     this.selectedHeroObj=selectedObj;
   }
 

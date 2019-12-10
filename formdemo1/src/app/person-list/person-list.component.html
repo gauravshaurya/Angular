@@ -1,0 +1,21 @@
+<br>
+<div class="container" align="center">
+    <h1 align="center">Employees List</h1>
+        <br>
+        <table class="table" border="1">
+            <thead class="thead-dark" align="center">
+                <tr>
+                    <th>Person ID</th>
+                    <th>Person Name</th>
+                    <th>Person Age</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr *ngFor="let p of personList">
+                    <td>{{p.personId}}</td>
+                    <td>{{p.personName}}</td>
+                    <td>Delete</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
