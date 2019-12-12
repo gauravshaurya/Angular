@@ -4,7 +4,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'buyerPage',loadChildren:'./buyer/buyer.module#BuyerModule'},
+  {path:'sellerPage',loadChildren:'./seller/seller.module#sellerModule'},
+  {path:'vendorPage',loadChildren:'./vendor/vendor.module#VendorModule'}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

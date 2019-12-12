@@ -32,14 +32,17 @@ export class LoginComponent  {
   console.log(this.loginForm.value);
   this.authService.login(this.loginForm.value.email,this.loginForm.value.password).subscribe(
     data=>{
-      alert("Welcome User.."+data);
-      if(data == 'Buyer'){
+      let uObj=data;
+      sessionStorage.setItem("setSessionObj", JSON.stringify(uObj));
+      console.log(data.role);
+      alert("Welcome"+" "+uObj.role+" "+uObj.userName);
+      if(uObj.role == 'Buyer'){
         this.router.navigate(['./buyerPage'])
       }
-      else if(data == 'Seller'){
+      else if(uObj.role == 'Seller'){
         this.router.navigate(['./sellerPage'])
       }
-      else if(data == 'Vendor'){
+      else if(uObj.role == 'Vendor'){
         this.router.navigate(['./vendorPage'])
       }
     },

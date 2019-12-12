@@ -1,12 +1,118 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- <ul class="navbar-nav">
-        <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/departments">Departments</a></li>
-        <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/employees">Employees</a></li>
-    </ul> -->
-    <ul class="navbar-nav navbar-right">
-        <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/login">Login</a></li>
-        <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/register">Register</a></li>
-    </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home">Purchase Order Management</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/login"
+            *ngIf="router.url==='/'||router.url==='/login'||router.url==='/register'">
+            Login
+            </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/register"
+            *ngIf="router.url==='/'||router.url==='/register'||router.url==='/login'">
+            Register
+            </a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/createPurchaseOrder"
+            *ngIf="router.url==='/buyerPage'||router.url==='/createPurchaseOrder' || router.url==='/viewPurchaseOrders'">
+            Create Purchase Order
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/viewPurchaseOrders"
+            *ngIf="router.url==='/buyerPage'||router.url==='/viewPurchaseOrders'||router.url==='/createPurchaseOrder'">
+            View Purchase Orders
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/viewAvailableProducts"
+            *ngIf="router.url==='/vendorPage'||router.url==='/viewAvailableProducts'||router.url==='/addQuantity'">
+            View Available Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addQuantity" 
+            *ngIf="router.url==='/vendorPage'||router.url==='/addQuantity'||router.url==='/viewAvailableProducts'">
+            Add Quantity
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()"
+            *ngIf="router.url==='/buyerPage'||router.url==='/LogOut'||router.url==='/viewPurchaseOrders'
+            ||router.url==='/createPurchaseOrder'||router.url==='/sellerPage'||router.url==='/vendorPage'
+            ||router.url==='/viewAvailableProducts'||router.url==='/addQuantity'">
+            Logout
+            </a>
+         </li>
+        </ul>
+      </nav>
+
+<!-- Welcome Navbar
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" *ngIf="flag==false && logged==undefined">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+        </ul>
 </nav>
- 
-<router-outlet></router-outlet>
+
+Buyer Navbar
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" *ngIf="flag==true && logged=='Buyer'">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/createPurchaseOrder">Create Purchase Order</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/viewPurchaseOrders">View Purchase Orders</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+</nav>
+
+Seller Navbar
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" *ngIf="flag==true && logged=='Seller'">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/">View Buyers</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/">View Purchase Orders</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+</nav>
+
+Vendor Navbar
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" *ngIf="flag==true && logged=='Vendor'">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/addQuantity">Add Quantity</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/viewAvailableProducts">View Available Products</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+</nav> -->

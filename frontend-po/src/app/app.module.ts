@@ -5,9 +5,10 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+
+import { VendorModule } from './vendor/vendor.module';
 import { BuyerModule } from './buyer/buyer.module';
 import { SellerModule } from './seller/seller.module';
-import { VendorModule } from './vendor/vendor.module';
 
 @NgModule({
   declarations: [

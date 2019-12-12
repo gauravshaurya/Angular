@@ -1,0 +1,24 @@
+<div class="container">
+        <h1 style="color: black;">Product List</h1>
+        
+        <table class="table table-borderless  table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th style="color: rgb(19, 221, 204);">Product Id</th>
+                    <th style="color: rgb(19, 221, 204);">Available Quantity</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+             
+                <tr *ngFor="let p of vendorProducts">
+                    <td>
+                        {{p.productId}}
+                    </td>
+                    <td>
+                        {{p.quantity}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>   
+</div>

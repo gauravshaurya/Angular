@@ -1,0 +1,48 @@
+<div align="right">
+		<!-- <h3>Welcome Buyer {{getSessionObj.userName"}}</h3> -->
+</div>
+	<hr/>
+	
+    <div align="center">
+            <div class="container-fluid">
+                <div align="center">
+                    <table border=1>
+                        <tr>
+                
+                            <th style="color: black">Purchase Order ID </th>				
+                            <th style="color: black">Buyer ID </th>
+                            <th style="color: black"> Seller ID </th>
+                            
+                            <th style="color: black"> View </th>
+                        </tr>
+                    
+                        <tr *ngFor="let po of poArray">	
+                            <td style="color: black">{{po.purchaseOrderId}}</td>
+                            <td style="color: black">{{po.buyerObj.userId}}</td>
+                            <td style="color: #000000">{{po.sellerObj.userId}}</td>
+                            <td><a (click)="viewPoItems(po.purchaseOrderId)" class="btn btn-primary">View</a></td> 
+                        </tr>
+                    </table>
+                </div>
+        </div>
+        <br>
+        
+        <div align="center" *ngIf="show">
+            <h2>PO Items List</h2>
+            <div class="ListPO">
+              <div align="center">
+                <table border=1>
+                  <tr>
+                    <th style="color: black">Product Name</th>
+                    <th style="color: black">Quantity </th>
+                    <th style="color: black">Product Id </th>
+                  </tr>
+                  <tr *ngFor="let obj of poItems">
+                      <td style="color: black">{{obj.productObj.productName}}</td>
+                      <td style="color: black">{{obj.quantity}}</td>
+                      <td style="color: black">{{obj.productObj.productId}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
