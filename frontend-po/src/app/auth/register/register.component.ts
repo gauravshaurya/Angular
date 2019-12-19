@@ -3,9 +3,6 @@ import { FormBuilder, FormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
-
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,9 +13,9 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder, private authService:AuthService, private router:Router) { }
 
   registrationForm=this.fb.group({
-    userName:[''],
+    userName:['',[Validators.required]],
     phone:[''],
-    email:[''],
+    email:['',[Validators.required]],
     address:this.fb.group({
       houseNumber:[''],
       address1:[''],
@@ -27,10 +24,23 @@ export class RegisterComponent implements OnInit {
       state:[''],
       pincode:['']
     }),
-    password:['']
+    password:['',[Validators.required,Validators.maxLength(8)]]
   });
 
   ngOnInit() { }
+
+  get userName()
+  {
+    return this.registrationForm.get("userName");
+  }
+  get email()
+  {
+    return this.registrationForm.get("email");
+  }
+  get password()
+  {
+    return this.registrationForm.get("password");
+  }
 
   registrationFormSubmit(){
     console.log(this.registrationForm.value);
